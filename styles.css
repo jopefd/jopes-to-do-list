@@ -9,7 +9,7 @@
 body {
 	background: linear-gradient(120deg, #f6d365, #fda085);
 	color: white;
-	font-family: "Poppins", sans-serif;
+	font: 100% "Poppins", sans-serif;
 	min-height: 100vh;
 }
 
@@ -63,6 +63,7 @@ form button:hover {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	transition: all 0.5s ease;
 }
 
 .todo li {
@@ -86,4 +87,46 @@ form button:hover {
 .fa-trash,
 .fa-check {
 	pointer-events: none;
+}
+
+.completed {
+	text-decoration: line-through;
+	opacity: 0.5;
+}
+
+.fall {
+	transform: translateX(-15rem);
+	opacity: 0;
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	color: #ff6f47;
+	width: 10rem;
+	cursor: pointer;
+	padding: 1rem;
+}
+
+.select {
+	margin: 1rem;
+	position: relative;
+	overflow: hidden;
+}
+.select::after {
+	content: "\25BC";
+	position: absolute;
+	background: #ff6f47;
+	top: 0;
+	right: 0;
+	padding: 1rem;
+	pointer-events: none;
+	transition: all 0.3s ease;
+}
+
+.select:hover::after {
+	background: white;
+	color: #ff6f47;
 }
